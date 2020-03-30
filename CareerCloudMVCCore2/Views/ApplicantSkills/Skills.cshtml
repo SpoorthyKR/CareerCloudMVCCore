@@ -1,0 +1,58 @@
+﻿@model ICollection<CareerCloudMVCCore2.Models.ApplicantSkills>
+
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h1>Skills</h1>
+
+@foreach (var item in Model)
+{
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Skill)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Skill)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.SkillLevel)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.SkillLevel)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.StartMonth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.StartMonth)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.StartYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.StartYear)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.EndMonth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.EndMonth)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.EndYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.EndYear)
+            </dd>
+        </dl>
+    </div>
+}
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>*@
+    <a asp-controller="ApplicantProfiles" asp-action="Index">Back to List</a>
+
+</div>

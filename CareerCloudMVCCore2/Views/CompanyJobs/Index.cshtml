@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CareerCloudMVCCore2.Models.CompanyJobs>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Company
+            </th>
+            <th>
+                jOBS
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @foreach (var item2 in item.CompanyNavigation.CompanyDescriptions.Where(L => L.LanguageId.Trim() == "EN"))
+                {
+                    @Html.ActionLink(item2.CompanyName, "Details", "CompanyProfiles", new { Id = item.Company})
+                }
+            </td>
+            <td>
+                @foreach (var job in item.CompanyJobsDescriptions)
+                {
+                    @Html.ActionLink(job.JobName, "ForApplicantDetails", "CompanyJobs", new { Id = item.Id })
+                }
+            </td>
+            <td>
+                <a asp-action="Create" asp-controller="ApplicantJobApplications" asp-route-Job="@item.Id"
+                   asp-route-Applicant="@ViewData["Applicant"]">Apply</a> |
+              
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@ 
+                @*@Html.Partial("_CompanyJobSkills",item.CompanyJobSkills);*@
+                @*<a asp-controller="CompanyJobSkills" asp-action="SkillDetails" asp-route-id="@item.Id">Skill Details</a> |*@
+                @*<a asp-controller="CompanyJobEducations" asp-action="EducationDetails" asp-route-id="@item.Id">Education Details</a> 
+            <a asp-controller="CompanyJobsDescriptions" asp-action="JobDescriptionDetails" asp-route-id="@item.Id">Job Description</a>*@
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

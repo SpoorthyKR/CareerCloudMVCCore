@@ -1,0 +1,32 @@
+﻿@model CareerCloudMVCCore2.Models.ApplicantResumes
+
+@{
+    ViewData["Title"] = "Resume";
+}
+
+<h1>Resume</h1>
+
+<div>
+    <h4>Resume</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastUpdated)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastUpdated)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>*@
+    <a asp-controller="ApplicantProfiles" asp-action="Index">Back to List</a>
+
+</div>

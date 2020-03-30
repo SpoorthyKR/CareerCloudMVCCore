@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareerCloudMVCCore2", "CareerCloudMVCCore2\CareerCloudMVCCore2.csproj", "{F4F5E114-2E33-4C67-9413-0D78AD493FD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4F5E114-2E33-4C67-9413-0D78AD493FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F5E114-2E33-4C67-9413-0D78AD493FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F5E114-2E33-4C67-9413-0D78AD493FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F5E114-2E33-4C67-9413-0D78AD493FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {275CAFFF-02D4-4B56-B0FE-19FF655CF81E}
+	EndGlobalSection
+EndGlobal

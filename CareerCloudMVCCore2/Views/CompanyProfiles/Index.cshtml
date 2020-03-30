@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CareerCloudMVCCore2.Models.CompanyProfiles>
+@*@model CareerCloudMVCCore2.Models.ViewModel.ViewModel*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Company List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyWebsite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactName)
+            </th>
+            <th>
+                <h6>
+                    Company Name
+                </h6>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyWebsite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @foreach(var item2 in item.CompanyDescriptions.Where(L=>L.LanguageId.Trim()=="EN"))
+                {
+                    @Html.ActionLink(item2.CompanyName,"Details","CompanyProfiles",new{Id=item.Id})
+                 }
+            </td>
+ 
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+,

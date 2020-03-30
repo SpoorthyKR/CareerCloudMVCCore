@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CareerCloudMVCCore2.Models.ApplicantProfiles>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h4>Salary</h4>
+            </th>
+            <th>
+                <h4>CurrentRate</h4>
+            </th>
+            <th>
+                <h4>Address</h4>
+            </th>
+            <th>
+                <h4>Full Name</h4>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentSalary)
+                    @Html.DisplayFor(modelItem => item.Currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentRate)/hr
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetAddress) |
+                    @Html.DisplayFor(modelItem => item.CityTown) |
+                    @Html.DisplayFor(modelItem => item.StateProvinceCode) |
+                    @Html.DisplayFor(modelItem => item.ZipPostalCode) |
+                    @Html.DisplayFor(modelItem => item.CountryCodeNavigation.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginNavigation.FullName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                    <a asp-controller="ApplicantEducations" asp-action="EducationDetails" asp-route-id="@item.Id">Education</a> |
+                    <a asp-controller="ApplicantJobApplications" asp-action="JobApplications" asp-route-id="@item.Id">Applied Jobs</a> |
+                    <a asp-controller="ApplicantResumes" asp-action="Resume" asp-route-id="@item.Id">Resume</a> |
+                    <a asp-controller="ApplicantSkills" asp-action="Skills" asp-route-id="@item.Id">Skills</a> |
+                    <a asp-controller="ApplicantWorkHistories" asp-action="WorkHistory" asp-route-id="@item.Id">WorkHistory</a> |
+                    <a asp-controller="CompanyJobs" asp-action="Index" asp-route-Applicant="@item.Id">Apply Jobs</a> |
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

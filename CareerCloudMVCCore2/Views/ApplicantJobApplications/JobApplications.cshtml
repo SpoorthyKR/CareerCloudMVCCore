@@ -1,0 +1,41 @@
+﻿@model ICollection<CareerCloudMVCCore2.Models.CompanyJobsDescriptions>
+
+
+@{
+    ViewData["Title"] = "JobApplications";
+}
+
+<h1>Details</h1>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>CompanyJobsDescriptions</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.JobName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.JobName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.JobDescriptions)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.JobDescriptions)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.JobNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.JobNavigation.Id)
+            </dd>
+        </dl>
+    </div>
+}
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>*@
+    @*<a asp-action="Index">Back to List</a>*@
+    <a asp-controller="ApplicantProfiles" asp-action="Index">Back to List</a>
+</div>

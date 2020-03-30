@@ -1,0 +1,51 @@
+﻿@model CareerCloudMVCCore2.Models.CompanyProfiles
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@*<h1>Company Details</h1>*@
+
+@*<div>
+    <h4>CompanyProfiles</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RegistrationDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyWebsite)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CompanyWebsite)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContactPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+    </dl>
+</div>*@
+<div>
+    @Html.Partial("_CompanyLocations", Model.CompanyLocations) 
+</div>
+<div>
+    @Html.Partial("_CompanyDescriptions", Model.CompanyDescriptions)
+</div>
+<div>
+    @Html.Partial("_CompanyJobs", Model.CompanyJobs,new ViewDataDictionary(ViewData) { { "Id", Model.Id } })
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
